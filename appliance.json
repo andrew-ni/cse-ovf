@@ -21,7 +21,9 @@
     "parking_directory": "images",
     "appliance_name": "cse-appliance",
     "repositories": {
-      "local": [],
+      "local": [
+        "/dbc/sc-dbc2131/niandrew/cap/sample"
+      ],
       "rpm": [
         {
           "csc-photon-vmbase": {

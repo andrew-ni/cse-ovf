@@ -14,8 +14,7 @@
       "personalization": {
         "root_password": "vmware"
       }
-    },
-    "after-rpm-install-script": "post-install.sh"
+    }
   },
   "configuration": {
     "OVFCustomization": "customizations.json",

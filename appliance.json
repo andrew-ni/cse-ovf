@@ -22,7 +22,7 @@
     "appliance_name": "cse-appliance",
     "repositories": {
       "local": [
-        "/dbc/sc-dbc2131/niandrew/cap/sample"
+        "/dbc/sc-dbc2131/niandrew/cap/sample/cse-ovf"
       ],
       "rpm": [
         {

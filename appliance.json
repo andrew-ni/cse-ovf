@@ -1,0 +1,153 @@
+{
+  "build-appliance": {
+    "remote": {
+      "machine": {
+        "datastore": "local-0",
+        "vcenter_address": "10.161.69.221",
+        "datacenter": "Datacenter",
+        "password": "Admin!23",
+        "username": "administrator@vsphere.local",
+        "network": "VM Network",
+        "cluster": "Cluster",
+        "hostname": "10.161.95.82"
+      },
+      "personalization": {
+        "root_password": "vmware"
+      }
+    }
+  },
+  "configuration": {
+    "OVFCustomization": "customizations.json",
+    "parking_directory": "images",
+    "appliance_name": "cse-appliance",
+    "repositories": {
+      "local": [],
+      "rpm": [
+        {
+          "csc-photon-vmbase": {
+            "repo": []
+          }
+        }
+      ]
+    },
+    "delivery_format": "OVF",
+    "cap_version": "1.5",
+    "cap_update_service": true,
+    "vai_catalog": {
+      "status": "enabled",
+      "version": "1.0.2",
+      "product": "CAP LVM Based Update Test Appliance - Updated",
+      "full_version": "1.0.0 Build 11111",
+      "build_number": "987654",
+      "vendor_url": "http://www.vmware.com",
+      "description": "Test Appliance",
+      "vendor_uuid": "706ee0c0-b51c-11de-8a39-0800200c9a66",
+      "product_rid": "8d167796-34d5-4899-be0a-6daade4005a3",
+      "vendor": "VMware Inc",
+      "release_date": "20200504162141.000000+000",
+      "update_info_list": {
+        "category": "feature",
+        "severity": "important",
+        "reference_type": "vendor"
+      },
+      "ext_config_list": {
+        "name": "allowedSourceVersions",
+        "value": "[6.5.0.0,]"
+      },
+      "package_group_list": {
+        "install_order": "0"
+      }
+    },
+    "product": {
+      "product_name": "CAP",
+      "version": "1.5",
+      "build_number": "987654"
+    },
+    "fips": "enabled",
+    "ovftool_params": ""
+  },
+  "hardware": {
+    "cpu_count": 4,
+    "ram_size": 12,
+    "storage": {
+      "disks": {},
+      "lvm_layout": [
+        {
+          "size": 10,
+          "volume_group_name": "vg_root_0",
+          "logical_volume_name": "lv_root_0",
+          "mount_point": "/",
+          "filesystem_type": "ext4"
+        },
+        {
+          "size": 5,
+          "volume_group_name": "vg_rpm_0",
+          "logical_volume_name": "lv_rpm_0",
+          "mount_point": "/rpms",
+          "filesystem_type": "ext4"
+        },
+        {
+          "size": 2,
+          "volume_group_name": "swap_vg",
+          "logical_volume_name": "swap1",
+          "mount_point": "",
+          "filesystem_type": "swap"
+        }
+      ],
+      "arrays": {}
+    },
+    "network": [
+      {
+        "connection_name": "VM Network"
+      }
+    ]
+  },
+  "software": {
+    "copy-to-appliance": {
+      "rpm": [],
+      "misc-files": [
+        {
+          "local": {
+            "target": "/root/",
+            "files": [
+              "install-cse.sh",
+              "setup-cse.sh",
+              "config.yaml"
+            ]
+          }
+        }
+      ]
+    },
+    "copy-from-appliance": [
+      {
+        "target": "logs/",
+        "files": [
+          "/tmp/rpm_manifest.txt"
+        ]
+      }
+    ],
+    "exclude": {
+      "rpm": []
+    },
+    "install": {
+      "iso": [],
+      "local": {
+        "files": [],
+        "target": "/tmp/repos"
+      }
+    },
+    "download": {
+      "rpm": [],
+      "misc-files": []
+    },
+    "remove": {
+      "rpm": []
+    }
+  },
+  "services": {
+    "install": [],
+    "exclude": [
+      "fileintegrity"
+    ]
+  }
+}

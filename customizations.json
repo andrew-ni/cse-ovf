@@ -15,30 +15,6 @@
             "ovf:required": "true",
             "ovf:userConfigurable": "true"
           }
-        },
-        {
-          "attributes": {
-            "ovf:key": "repositoryUrl",
-            "ovf:value": "https://github.com/vmware/container-service-extension",
-            "ovf:type": "string",
-            "ovf:required": "true",
-            "ovf:userConfigurable": "true"
-          },
-          "Label": {
-            "value": "Git repository to clone"
-          }
-        },
-        {
-          "attributes": {
-            "ovf:key": "branch",
-            "ovf:value": "master",
-            "ovf:type": "string",
-            "ovf:required": "true",
-            "ovf:userConfigurable": "true"
-          },
-          "Label": {
-            "value": "Git branch to use"
-          }
         }
       ]
     }

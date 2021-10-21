@@ -1,0 +1,27 @@
+{
+  "name": "cap-testbed1",
+  "version": 3,
+  "vcs": [
+    {
+      "name": "vc.0",
+      "type": "vcva",
+      "dcName": [
+        "Datacenter"
+      ]
+    }
+  ],
+  "esx": [
+    {
+      "name": "esx.0",
+      "style": "fullInstall",
+      "fullClone": true,
+      "vc": "vc.0",
+      "dc": "Datacenter",
+      "cpus": 32,
+      "memory": 65536,
+      "disks": [
+        500000000
+      ]
+    }
+  ]
+}

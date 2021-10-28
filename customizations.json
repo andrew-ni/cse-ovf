@@ -3,18 +3,29 @@
     {
       "attributes": {
         "ovf:class": "cse",
-        "ovf:required": "false"
+        "ovf:required": "true"
       },
-      "Info": "CSE Server specific properties",
-      "properties": [
+      "Info": "CSE Server Properties",
+      "categories": [
         {
+          "name": "CSE Server Properties",
           "attributes": {
-            "ovf:key": "configUrl",
-            "ovf:value": "https://raw.githubusercontent.com/andrew-ni/cse-ovf/master/config.yaml",
-            "ovf:type": "string",
-            "ovf:required": "false",
-            "ovf:userConfigurable": "true"
-          }
+            "ovf:msgid": "cse.category"
+          },
+          "properties": [
+            {
+              "attributes": {
+                "ovf:key": "configUrl",
+                "ovf:value": "https://raw.githubusercontent.com/andrew-ni/cse-ovf/master/config.yaml",
+                "ovf:type": "string",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "URL to CSE Server config file"
+              }
+            }
+          ]
         }
       ]
     }

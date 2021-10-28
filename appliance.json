@@ -3,13 +3,13 @@
     "remote": {
       "machine": {
         "datastore": "local-0",
-        "vcenter_address": "10.161.69.221",
+        "vcenter_address": "10.78.194.154",
         "datacenter": "Datacenter",
         "password": "Admin!23",
         "username": "administrator@vsphere.local",
         "network": "VM Network",
         "cluster": "Cluster",
-        "hostname": "10.161.95.82"
+        "hostname": "10.78.201.13"
       },
       "personalization": {
         "root_password": "vmware"

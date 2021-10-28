@@ -5,7 +5,7 @@ git clone https://github.com/vmware/container-service-extension
 pip3 install --ignore-installed container-service-extension/
 
 git clone https://github.com/andrew-ni/cse-ovf.git
-mv cse-ovf/cse.service cse-ovf/systemd/system/cse.service
+mv cse-ovf/cse.service /etc/systemd/system/cse.service
 mv cse-ovf/cse-run.sh /root/cse-run.sh
 
 wget $(ovfenv -k cse.configUrl) -O cse-config.yaml

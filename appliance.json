@@ -111,11 +111,9 @@
       "misc-files": [
         {
           "local": {
-            "target": "/root/",
+            "target": "/etc/vmware/cap/",
             "files": [
-              "install-cse.sh",
-              "setup-cse.sh",
-              "config.yaml"
+              "cap-firstboot.sh"
             ]
           }
         }

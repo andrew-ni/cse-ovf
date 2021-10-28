@@ -3,7 +3,7 @@
     {
       "attributes": {
         "ovf:class": "cse",
-        "ovf:required": "true"
+        "ovf:required": "false"
       },
       "Info": "CSE Server specific properties",
       "properties": [
@@ -12,7 +12,7 @@
             "ovf:key": "configUrl",
             "ovf:value": "https://raw.githubusercontent.com/andrew-ni/cse-ovf/master/config.yaml",
             "ovf:type": "string",
-            "ovf:required": "true",
+            "ovf:required": "false",
             "ovf:userConfigurable": "true"
           }
         }

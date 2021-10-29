@@ -136,7 +136,7 @@
           "local": {
             "target": "/var/lib/cloud/scripts/per-boot/",
             "files": [
-              "cse-init-per-boot.yaml"
+              "cse-init-per-boot.sh"
             ]
           }
         },
@@ -144,7 +144,7 @@
           "local": {
             "target": "/var/lib/cloud/scripts/per-instance/",
             "files": [
-              "cse-init-per-instance.yaml"
+              "cse-init-per-instance.sh"
             ]
           }
         }

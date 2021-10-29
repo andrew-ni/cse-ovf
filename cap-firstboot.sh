@@ -4,11 +4,11 @@ pip3 install --upgrade pip
 git clone https://github.com/vmware/container-service-extension
 pip3 install --ignore-installed container-service-extension/
 
-git clone https://github.com/andrew-ni/cse-ovf.git
-mv cse-ovf/cse.service /etc/systemd/system/cse.service
-mv cse-ovf/cse-run.sh /root/cse-run.sh
-mv cse-ovf/cse-init-per-boot.yaml /var/lib/cloud/scripts/per-boot/cse-init-per-boot.yaml
-mv cse-ovf/cse-init-per-instance.yaml /var/lib/cloud/scripts/per-instance/cse-init-per-instance.yaml
+# git clone https://github.com/andrew-ni/cse-ovf.git
+# mv cse-ovf/cse.service /etc/systemd/system/cse.service
+# mv cse-ovf/cse-run.sh /root/cse-run.sh
+# mv cse-ovf/cse-init-per-boot.yaml /var/lib/cloud/scripts/per-boot/cse-init-per-boot.yaml
+# mv cse-ovf/cse-init-per-instance.yaml /var/lib/cloud/scripts/per-instance/cse-init-per-instance.yaml
 
 
 # echo $(ovfenv -k cse.configUrl) > /root/sanity-cap-firstboot.yaml

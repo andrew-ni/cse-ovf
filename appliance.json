@@ -115,6 +115,38 @@
               "cap-firstboot.sh"
             ]
           }
+        },
+        {
+          "local": {
+            "target": "/etc/systemd/system/",
+            "files": [
+              "cse.service"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/root/",
+            "files": [
+              "cse-run.sh"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/lib/cloud/scripts/per-boot/",
+            "files": [
+              "cse-init-per-boot.yaml"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/lib/cloud/scripts/per-instance/",
+            "files": [
+              "cse-init-per-instance.yaml"
+            ]
+          }
         }
       ]
     },

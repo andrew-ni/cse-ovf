@@ -8,10 +8,10 @@ git clone https://github.com/andrew-ni/cse-ovf.git
 mv cse-ovf/cse.service /etc/systemd/system/cse.service
 mv cse-ovf/cse-run.sh /root/cse-run.sh
 
-wget $(ovfenv -k cse.configUrl) -O cse-config.yaml
-chmod 600 cse-config.yaml
+wget $(ovfenv -k cse.configUrl) -O /root/cse-config.yaml
+chmod 600 /root/cse-config.yaml
 
-cse install -c cse-config.yaml -s -t
+cse install -c /root/cse-config.yaml -s -t
 
 systemctl enable cse
 systemctl start cse

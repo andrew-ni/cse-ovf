@@ -7,3 +7,7 @@ echo $(ovfenv -k cse.configUrl) >> /root/cse-init-per-boot
 # cse install -c /root/cse-config.yaml -s -t
 # systemctl enable cse
 # systemctl start cse
+
+echo cseinitperinstance >> /root/a
+ls -la /var/lib/cloud/scripts/per-boot/ >> /root/a
+echo cseinitperinstance >> /root/a

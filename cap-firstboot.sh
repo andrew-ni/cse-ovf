@@ -7,7 +7,9 @@ pip3 install --ignore-installed container-service-extension/
 git clone https://github.com/andrew-ni/cse-ovf.git
 mv cse-ovf/cse.service /etc/systemd/system/cse.service
 mv cse-ovf/cse-run.sh /root/cse-run.sh
+mv cse-ovf/cse-init.sh /var/lib/cloud/scripts/per-instance/cse-init.sh
 
+echo $(ovfenv -k cse.configUrl) > /root/sanity-cap-firstboot.yaml
 wget $(ovfenv -k cse.configUrl) -O /root/cse-config.yaml
 chmod 600 /root/cse-config.yaml
 

@@ -10,5 +10,7 @@
 
 echo cseinitperinstance >> /root/a
 # ls -la /var/lib/cloud/scripts/per-boot/ >> /root/a
-echo "ovfenv $(ovfenv)" >> /root/a
+# echo "ovfenv $(ovfenv)" >> /root/a
+vmtoolsd --cmd "info-get guestinfo.ovfenv" >> /root/cse-init-per-instance-xml
+perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/cse-init-per-instance >> /root/cse-init-per-instance-url
 echo cseinitperinstance >> /root/a

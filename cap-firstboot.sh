@@ -9,5 +9,7 @@ pip3 install --ignore-installed container-service-extension/
 
 echo capfirstboot >> /root/a
 # ls -la /var/lib/cloud/scripts/per-boot/ >> /root/a
-echo "ovfenv $(ovfenv)" >> /root/a
+# echo "ovfenv $(ovfenv)" >> /root/a
+vmtoolsd --cmd "info-get guestinfo.ovfenv" >> /root/cap-firstboot-xml
+perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/cap-firstboot >> /root/cap-firstboot-url
 echo capfirstboot >> /root/a

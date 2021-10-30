@@ -4,7 +4,7 @@ Wants=network-online.target,rabbitmq-server.service
 After=network-online.target,rabbitmq-server.service
 
 [Service]
-ExecStart=/root/cse-run.sh
+ExecStart=/bin/bash /root/cse-run.sh
 User=root
 WorkingDirectory=/root
 Type=simple

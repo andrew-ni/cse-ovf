@@ -15,7 +15,6 @@
         "root_password": "vmware"
       }
     },
-    "before-rpm-install-script": "pre-install.sh",
     "after-rpm-install-script": "post-install.sh"
   },
   "configuration": {
@@ -112,14 +111,6 @@
       "misc-files": [
         {
           "local": {
-            "target": "/etc/vmware/cap/",
-            "files": [
-              "cap-firstboot.sh"
-            ]
-          }
-        },
-        {
-          "local": {
             "target": "/etc/systemd/system/",
             "files": [
               "cse.service"
@@ -131,14 +122,6 @@
             "target": "/root/",
             "files": [
               "cse-run.sh"
-            ]
-          }
-        },
-        {
-          "local": {
-            "target": "/var/lib/cloud/scripts/per-boot/",
-            "files": [
-              "cse-init-per-boot.sh"
             ]
           }
         },

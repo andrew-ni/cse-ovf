@@ -8,5 +8,6 @@ pip3 install --ignore-installed container-service-extension/
 # sed -i 's/scripts-user/[scripts-user, always]/g' /etc/cloud/cloud.cfg
 
 echo capfirstboot >> /root/a
-ls -la /var/lib/cloud/scripts/per-boot/ >> /root/a
+# ls -la /var/lib/cloud/scripts/per-boot/ >> /root/a
+echo "ovfenv $(ovfenv)" >> /root/a
 echo capfirstboot >> /root/a

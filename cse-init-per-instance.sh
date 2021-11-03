@@ -10,5 +10,6 @@ perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/ovfenv >
 wget $(cat /root/configUrl) -O /root/cse-config.yaml
 chmod 600 /root/cse-config.yaml
 cse install -c /root/cse-config.yaml -s -t > /root/cse-install-output.log
+cse upgrade -c /root/cse-config.yaml -s -t > /root/cse-upgrade-output.log
 systemctl enable cse
 systemctl start cse

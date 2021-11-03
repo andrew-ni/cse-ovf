@@ -24,6 +24,183 @@
               "Label": {
                 "value": "URL to CSE Server config file"
               }
+            },
+            {
+              "attributes": {
+                "ovf:key": "mqttVerifySsl",
+                "ovf:type": "boolean",
+                "ovf:value": "False",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Enable SSL verification for MQTT"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcdHost",
+                "ovf:type": "string",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "VCD host"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcdPort",
+                "ovf:type": "int",
+                "ovf:value": "443",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "VCD port"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcdUsername",
+                "ovf:type": "string",
+                "ovf:value": "administrator",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "VCD username"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcdPassword",
+                "ovf:type": "string",
+                "ovf:value": "administrator",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true",
+                "ovf:password": "true"
+              },
+              "Label": {
+                "value": "VCD password"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcdVerifySsl",
+                "ovf:type": "boolean",
+                "ovf:value": "False",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Enable SSL verification for VCD"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "serviceProcessors",
+                "ovf:type": "int",
+                "ovf:value": "15",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Number of service processors"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "serviceTelemetry",
+                "ovf:type": "boolean",
+                "ovf:value": "True",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Enable telemetry for CSE Server"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerIpAllocationMode",
+                "ovf:type": "string",
+                "ovf:value": "pool",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "IP allocation mode (pool or dhcp)"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerRemoteTemplateCookbookUrl",
+                "ovf:type": "string",
+                "ovf:value": "https://raw.githubusercontent.com/vmware/container-service-extension-templates/master/template_v2.yaml",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "URL to remote template descriptor file"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerOrg",
+                "ovf:type": "string",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Org for k8s templates"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerOvdc",
+                "ovf:type": "string",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "OVDC for k8s templates"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerCatalog",
+                "ovf:type": "string",
+                "ovf:value": "cse",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Catalog for k8s templates"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerNetwork",
+                "ovf:type": "string",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "OVDC network for k8s templates"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "brokerStorageProfile",
+                "ovf:type": "string",
+                "ovf:value": "*",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Storage profile for k8s templates"
+              }
             }
           ]
         }

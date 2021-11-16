@@ -15,7 +15,8 @@
         "root_password": "vmware"
       }
     },
-    "after-rpm-install-script": "post-install.sh"
+    "after-rpm-install-script": "post-install.sh",
+    "before-rpm-install-script": "pre-install.sh"
   },
   "configuration": {
     "OVFCustomization": "customizations.json",

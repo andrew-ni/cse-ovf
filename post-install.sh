@@ -7,3 +7,5 @@ chmod u+x /var/lib/cloud/scripts/per-instance/cse-init-per-instance.sh
 # git clone -b cse_3_1_updates https://github.com/vmware/container-service-extension
 # pip3 install --ignore-installed container-service-extension/ >> /root/post-install.log
 # yum -y remote git >> /root/post-install.log
+
+echo hello >> /root/post-install.log

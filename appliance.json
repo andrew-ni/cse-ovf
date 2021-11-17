@@ -24,7 +24,11 @@
     "appliance_name": "cse-appliance",
     "repositories": {
       "local": [
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf"
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon/rpms/noarch",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon/rpms/x86_64",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/noarch",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/x86_64"
       ],
       "rpm": [
         {
@@ -131,6 +135,60 @@
             "target": "/var/lib/cloud/scripts/per-instance/",
             "files": [
               "cse-init-per-instance.sh"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/cache/tdnf/photon/rpms/noarch/",
+            "files": [
+              "perl-CGI-4.40-1.ph3.noarch.rpm",
+              "perl-YAML-1.26-1.ph3.noarch.rpm"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/cache/tdnf/photon/rpms/x86_64/",
+            "files": [
+              "gcc-7.3.0-4.ph3.x86_64.rpm",
+              "libffi-devel-3.2.1-6.ph3.x86_64.rpm",
+              "libgcc-atomic-7.3.0-4.ph3.x86_64.rpm",
+              "libgcc-devel-7.3.0-4.ph3.x86_64.rpm",
+              "libgomp-devel-7.3.0-4.ph3.x86_64.rpm",
+              "libstdc++-devel-7.3.0-4.ph3.x86_64.rpm",
+              "serf-1.3.9-1.ph3.x86_64.rpm",
+              "utf8proc-2.2.0-1.ph3.x86_64.rpm"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/cache/tdnf/photon-updates/rpms/noarch/",
+            "files": [
+              "linux-api-headers-4.19.190-1.ph3.noarch.rpm",
+              "python3-pip-21.0.1-3.ph3.noarch.rpm"
+            ]
+          }
+        },
+        {
+          "local": {
+            "target": "/var/cache/tdnf/photon-updates/rpms/x86_64/",
+            "files": [
+              "binutils-2.32-5.ph3.x86_64.rpm",
+              "binutils-libs-2.32-5.ph3.x86_64.rpm",
+              "bzip2-devel-1.0.8-2.ph3.x86_64.rpm",
+              "git-2.23.3-2.ph3.x86_64.rpm",
+              "libxml2-2.9.11-1.ph3.x86_64.rpm",
+              "libxml2-devel-2.9.11-1.ph3.x86_64.rpm",
+              "libxml2-python-2.9.11-1.ph3.x86_64.rpm",
+              "mpc-1.1.0-2.ph3.x86_64.rpm",
+              "openssl-devel-1.0.2y-1.ph3.x86_64.rpm",
+              "python2-2.7.17-5.ph3.x86_64.rpm",
+              "python2-libs-2.7.17-5.ph3.x86_64.rpm",
+              "python3-libxml2-2.9.11-1.ph3.x86_64.rpm",
+              "subversion-1.10.2-6.ph3.x86_64.rpm",
+              "subversion-perl-1.10.2-6.ph3.x86_64.rpm"
             ]
           }
         }

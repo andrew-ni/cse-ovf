@@ -126,7 +126,8 @@
           "local": {
             "target": "/root/",
             "files": [
-              "cse-run.sh"
+              "cse-run.sh",
+              "container-service-extension.zip"
             ]
           }
         },

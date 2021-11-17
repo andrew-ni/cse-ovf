@@ -8,4 +8,4 @@
 # # pip3 install --ignore-installed container-service-extension/ >> /root/pre-install.log
 # yum -y remote git >> /root/pre-install.log
 
-echo hello >> /root/pre-install.log
+echo `date` >> /root/pre-install.log

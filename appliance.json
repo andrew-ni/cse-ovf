@@ -172,7 +172,9 @@
               "libxml2-python-2.9.11-1.ph3.x86_64.rpm",
               "mpc-1.1.0-2.ph3.x86_64.rpm",
               "openssl-devel-1.0.2y-1.ph3.x86_64.rpm",
-              "python3-libxml2-2.9.11-1.ph3.x86_64.rpm"
+              "python3-libxml2-2.9.11-1.ph3.x86_64.rpm",
+              "python2-2.7.17-5.ph3.x86_64.rpm",
+              "python2-libs-2.7.17-5.ph3.x86_64.rpm"
             ]
           }
         }

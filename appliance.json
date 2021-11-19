@@ -25,7 +25,6 @@
     "repositories": {
       "local": [
         "/dbc/sc-dbc2131/niandrew/cap/cse-ovf",
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon/rpms/noarch",
         "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon/rpms/x86_64",
         "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/noarch",
         "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/x86_64"

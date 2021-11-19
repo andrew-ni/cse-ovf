@@ -126,7 +126,6 @@
             "target": "/root/",
             "files": [
               "cse-run.sh",
-              "container-service-extension.zip",
               "container_service_extension-3.1.2.dev10-py3-none-any.whl"
             ]
           }

@@ -139,8 +139,6 @@
           }
         },
         {
-        },
-        {
           "local": {
             "target": "/var/cache/tdnf/photon/rpms/x86_64/",
             "files": [

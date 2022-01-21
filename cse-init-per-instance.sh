@@ -7,7 +7,7 @@ rpm -Uvvh /var/cache/tdnf/photon/rpms/x86_64/*.rpm >> /root/cse-init-per-instanc
 rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/noarch/*.rpm >> /root/cse-init-per-instance.log
 
 pip3 install --upgrade /root/pip-21.3.1-py3-none-any.whl
-pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev10-py3-none-any.whl
+pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev37-py3-none-any
 
 vmtoolsd --cmd "info-get guestinfo.ovfenv" > /root/ovfenv
 perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/ovfenv > /root/configUrl
@@ -30,8 +30,8 @@ perl -ne 'print $1,"\n" if (m/cse\.brokerStorageProfile.*oe:value="(.*?)"/)' /ro
 
 wget $(cat /root/configUrl) -O /root/cse-config.yaml
 chmod 600 /root/cse-config.yaml
-cse install -c /root/cse-config.yaml -s -t > /root/cse-install-output.log
-cse upgrade -c /root/cse-config.yaml -s -t > /root/cse-upgrade-output.log
+cse install -c /root/cse-config.yaml -s > /root/cse-install-output.log
+cse upgrade -c /root/cse-config.yaml -s > /root/cse-upgrade-output.log
 systemctl enable cse
 systemctl start cse
 echo `date` >> /root/cse-init-per-instance.log

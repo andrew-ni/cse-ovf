@@ -76,7 +76,7 @@
               "attributes": {
                 "ovf:key": "vcdPassword",
                 "ovf:type": "string",
-                "ovf:value": "administrator",
+                "ovf:value": "ca$hc0w",
                 "ovf:required": "true",
                 "ovf:userConfigurable": "true",
                 "ovf:password": "true"

@@ -3,13 +3,13 @@
     "remote": {
       "machine": {
         "datastore": "local-0",
-        "vcenter_address": "10.182.48.226",
+        "vcenter_address": "10.161.133.153",
         "datacenter": "Datacenter",
         "password": "Admin!23",
         "username": "administrator@vsphere.local",
         "network": "VM Network",
         "cluster": "Cluster",
-        "hostname": "10.182.61.18"
+        "hostname": "10.161.136.147"
       },
       "personalization": {
         "root_password": "vmware"
@@ -127,7 +127,7 @@
             "target": "/root/",
             "files": [
               "cse-run.sh",
-              "container_service_extension-3.1.2.dev10-py3-none-any.whl",
+              "container_service_extension-3.1.2.dev37-py3-none-any.whl",
               "pip-21.3.1-py3-none-any.whl"
             ]
           }

@@ -11,6 +11,23 @@ pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev10-py
 
 vmtoolsd --cmd "info-get guestinfo.ovfenv" > /root/ovfenv
 perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/ovfenv > /root/configUrl
+
+perl -ne 'print $1,"\n" if (m/cse\.mqttVerifySsl.*oe:value="(.*?)"/)' /root/ovfenv > /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.vcdHost.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.vcdPort.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.vcdUsername.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.vcdPassword.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.vcdVerifySsl.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.serviceProcessors.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.serviceTelemetry.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerIpAllocationMode.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerRemoteTemplateCookbookUrl.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerOrg.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerOvdc.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerCatalog.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerNetwork.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+perl -ne 'print $1,"\n" if (m/cse\.brokerStorageProfile.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
+
 wget $(cat /root/configUrl) -O /root/cse-config.yaml
 chmod 600 /root/cse-config.yaml
 cse install -c /root/cse-config.yaml -s -t > /root/cse-install-output.log

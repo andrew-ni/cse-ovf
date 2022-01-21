@@ -2,7 +2,7 @@ mqtt:
   verify_ssl: false
 
 vcd:
-  host: bos1-vcloud-static-171-84.eng.vmware.com
+  host: vmc-vcloud-dhcp-168-150.eng.vmware.com
   log: true
   password: ca$hc0w
   port: 443
@@ -24,6 +24,7 @@ service:
   enable_tkg_plus: true
   legacy_mode: false
   no_vc_communication_mode: true
+  register_capvcd_schema: true
 
 broker:
   catalog: cse
@@ -33,8 +34,5 @@ broker:
   network: network1
   org: cseorg
   remote_template_cookbook_url: https://raw.githubusercontent.com/vmware/container-service-extension-templates/dev/template_v2.yaml
-  # remote_template_cookbook_url: https://raw.githubusercontent.com/vmware/container-service-extension-templates/master/template_v2.yaml
-  # remote_template_cookbook_url: https://raw.githubusercontent.com/vmware/container-service-extension-templates/upgrades/template_v2.yaml
-  # remote_template_cookbook_url: https://raw.githubusercontent.com/andrew-ni/container-service-extension-templates/tkg/template_v2.yaml
   storage_profile: '*'
   vdc: cseorg-vdc

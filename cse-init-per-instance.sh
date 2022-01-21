@@ -6,8 +6,8 @@ rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/x86_64/*.rpm >> /root/cse-init-per
 rpm -Uvvh /var/cache/tdnf/photon/rpms/x86_64/*.rpm >> /root/cse-init-per-instance.log
 rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/noarch/*.rpm >> /root/cse-init-per-instance.log
 
-pip3 install --upgrade /root/pip-21.3.1-py3-none-any.whl
-pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev37-py3-none-any
+pip3 install --upgrade /root/pip-21.3.1-py3-none-any.whl >> /root/cse-init-per-instance.log
+pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev37-py3-none-any.whl >> /root/cse-init-per-instance.log
 
 vmtoolsd --cmd "info-get guestinfo.ovfenv" > /root/ovfenv
 perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/ovfenv > /root/configUrl

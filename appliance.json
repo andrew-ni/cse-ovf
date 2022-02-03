@@ -127,7 +127,7 @@
             "target": "/root/",
             "files": [
               "cse-run.sh",
-              "container_service_extension-3.1.2.dev37-py3-none-any.whl",
+              "container_service_extension-3.1.2.dev46-py3-none-any.whl",
               "pip-21.3.1-py3-none-any.whl"
             ]
           }

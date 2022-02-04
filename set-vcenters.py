@@ -2,10 +2,10 @@ import sys
 
 def main():
     config_filepath = sys.argv[1]
-    vc_names = stringsFromFilepath(sys.argv[2])
-    vc_usernames = stringsFromFilepath(sys.argv[3])
-    vc_passwords = stringsFromFilepath(sys.argv[4])
-    vc_verifys = [s.lower() for s in stringsFromFilepath(sys.argv[5])]
+    vc_names = strings_from_filepath(sys.argv[2])
+    vc_usernames = strings_from_filepath(sys.argv[3])
+    vc_passwords = strings_from_filepath(sys.argv[4])
+    vc_verifys = [s.lower() for s in strings_from_filepath(sys.argv[5])]
 
     vcenters_yaml_str = 'vcs:\n'
     for i, name in enumerate(vc_names):
@@ -31,7 +31,7 @@ def main():
                 f.write(line)
         f.write(vcenters_yaml_str)
 
-def stringsFromFilepath(filepath):
+def strings_from_filepath(filepath):
     with open(filepath) as f:
         return [s.strip() for s in f.readline().split(',')]
 

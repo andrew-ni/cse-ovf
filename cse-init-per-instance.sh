@@ -1,15 +1,17 @@
 #!/bin/bash
 
-echo `date` >> /root/cse-init-per-instance.log
-# order matters here: gcc needs mpc installed first
-rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/x86_64/*.rpm >> /root/cse-init-per-instance.log
-rpm -Uvvh /var/cache/tdnf/photon/rpms/x86_64/*.rpm >> /root/cse-init-per-instance.log
-rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/noarch/*.rpm >> /root/cse-init-per-instance.log
-
-pip3 install --upgrade /root/pip-21.3.1-py3-none-any.whl >> /root/cse-init-per-instance.log
-pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev46-py3-none-any.whl >> /root/cse-init-per-instance.log
-
 config_filepath=/root/cse-config.yaml
+log_filepath=/root/cse-init-per-instance.log
+
+
+echo `date` >> $log_filepath
+# order matters here: gcc needs mpc installed first
+rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/x86_64/*.rpm >> $log_filepath
+rpm -Uvvh /var/cache/tdnf/photon/rpms/x86_64/*.rpm >> $log_filepath
+rpm -Uvvh /var/cache/tdnf/photon-updates/rpms/noarch/*.rpm >> $log_filepath
+
+pip3 install --upgrade /root/pip-21.3.1-py3-none-any.whl >> $log_filepath
+pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev46-py3-none-any.whl >> $log_filepath
 
 vmtoolsd --cmd "info-get guestinfo.ovfenv" > /root/ovfenv
 perl -ne 'print $1,"\n" if (m/cse\.mqttVerifySsl.*oe:value="(.*?)"/)' /root/ovfenv >> /root/properties
@@ -56,4 +58,4 @@ cse install -c $config_filepath -s > /root/cse-install-output.log
 cse upgrade -c $config_filepath -s > /root/cse-upgrade-output.log
 systemctl enable cse
 systemctl start cse
-echo `date` >> /root/cse-init-per-instance.log
+echo `date` >> $log_filepath

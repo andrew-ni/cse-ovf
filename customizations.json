@@ -50,18 +50,6 @@
             },
             {
               "attributes": {
-                "ovf:key": "vcdPort",
-                "ovf:type": "int",
-                "ovf:value": "443",
-                "ovf:required": "true",
-                "ovf:userConfigurable": "true"
-              },
-              "Label": {
-                "value": "VCD port"
-              }
-            },
-            {
-              "attributes": {
                 "ovf:key": "vcdUsername",
                 "ovf:type": "string",
                 "ovf:value": "administrator",
@@ -99,18 +87,6 @@
             },
             {
               "attributes": {
-                "ovf:key": "serviceProcessors",
-                "ovf:type": "int",
-                "ovf:value": "15",
-                "ovf:required": "true",
-                "ovf:userConfigurable": "true"
-              },
-              "Label": {
-                "value": "Number of service processors"
-              }
-            },
-            {
-              "attributes": {
                 "ovf:key": "serviceTelemetry",
                 "ovf:type": "boolean",
                 "ovf:value": "True",
@@ -119,18 +95,6 @@
               },
               "Label": {
                 "value": "Enable telemetry for CSE Server"
-              }
-            },
-            {
-              "attributes": {
-                "ovf:key": "brokerIpAllocationMode",
-                "ovf:type": "string",
-                "ovf:value": "pool",
-                "ovf:required": "true",
-                "ovf:userConfigurable": "true"
-              },
-              "Label": {
-                "value": "IP allocation mode (pool or dhcp)"
               }
             },
             {
@@ -200,6 +164,54 @@
               },
               "Label": {
                 "value": "Storage profile for k8s templates"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcentersNames",
+                "ovf:type": "string",
+                "ovf:value": "vc1, vc2, vc3",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Comma-separated list of vcenter names (ex. vc1, vc2, vc3)"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcentersUsernames",
+                "ovf:type": "string",
+                "ovf:value": "vc1-user, vc2-user, vc3-user",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Comma-separated list of vcenter usernames (ex. vc1-user, vc2-user, vc3-user)"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcentersPasswords",
+                "ovf:type": "string",
+                "ovf:value": "vc1-pw, vc2-pw, vc3-pw",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Comma-separated list of vcenter passwords (ex. vc1-pw, vc2-pw, vc3-pw)"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "vcentersVerify",
+                "ovf:type": "string",
+                "ovf:value": "false, false, false",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Comma-separated list of whether to verify ssl for each vcenter (ex. false, false, true)"
               }
             }
           ]

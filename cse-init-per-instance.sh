@@ -11,12 +11,6 @@ pip3 install --ignore-installed /root/container_service_extension-3.1.2.dev46-py
 
 vmtoolsd --cmd "info-get guestinfo.ovfenv" > /root/ovfenv
 
-# unused
-perl -ne 'print $1,"\n" if (m/cse\.brokerIpAllocationMode.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
-perl -ne 'print $1,"\n" if (m/cse\.brokerRemoteTemplateCookbookUrl.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
-perl -ne 'print $1,"\n" if (m/cse\.vcdPort.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
-perl -ne 'print $1,"\n" if (m/cse\.serviceProcessors.*oe:value="(.*?)"/)' /root/ovfenv >> /root/cse-properties
-
 cse sample -o /root/cse-config.yaml \
     -x mqtt_verify $(perl -ne 'print $1,"\n" if (m/cse\.mqttVerifySsl.*oe:value="(.*?)"/)' /root/ovfenv) \
     -x vcd_host $(perl -ne 'print $1,"\n" if (m/cse\.vcdHost.*oe:value="(.*?)"/)' /root/ovfenv) \
@@ -28,12 +22,22 @@ cse sample -o /root/cse-config.yaml \
     -x broker.vdc $(perl -ne 'print $1,"\n" if (m/cse\.brokerOvdc.*oe:value="(.*?)"/)' /root/ovfenv) \
     -x catalog_name $(perl -ne 'print $1,"\n" if (m/cse\.brokerCatalog.*oe:value="(.*?)"/)' /root/ovfenv) \
     -x broker.network $(perl -ne 'print $1,"\n" if (m/cse\.brokerNetwork.*oe:value="(.*?)"/)' /root/ovfenv) \
-    -x broker.storage_profile $(perl -ne 'print $1,"\n" if (m/cse\.brokerStorageProfile.*oe:value="(.*?)"/)' /root/ovfenv)
+    -x broker.storage_profile $(perl -ne 'print $1,"\n" if (m/cse\.brokerStorageProfile.*oe:value="(.*?)"/)' /root/ovfenv) \
+    -x broker.remote_template_cookbook_url $(perl -ne 'print $1,"\n" if (m/cse\.brokerRemoteTemplateCookbookUrl.*oe:value="(.*?)"/)' /root/ovfenv)
 
 # perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' /root/ovfenv > /root/configUrl
 # wget $(cat /root/configUrl) -O /root/cse-config.yaml
 
+sed '/enforce_authorization/a \  enforce_authorization: true' /root/cse-config.yaml > /root/cse-config.yaml
 chmod 600 /root/cse-config.yaml
+
+perl -ne 'print $1,"\n" if (m/cse\.vcentersNames.*oe:value="(.*?)"/)' /root/ovfenv >> /root/vcNames
+perl -ne 'print $1,"\n" if (m/cse\.vcentersUsernames.*oe:value="(.*?)"/)' /root/ovfenv >> /root/vcUsernames
+perl -ne 'print $1,"\n" if (m/cse\.vcentersPasswords.*oe:value="(.*?)"/)' /root/ovfenv >> /root/vcPasswords
+perl -ne 'print $1,"\n" if (m/cse\.vcentersVerify.*oe:value="(.*?)"/)' /root/ovfenv >> /root/vcVerify
+
+python3 /root/set-vcenters.py /root/cse-config.yaml /root/vcNames /root/vcUsernames /root/vcPasswords /root/vcVerify
+
 cse install -c /root/cse-config.yaml -s > /root/cse-install-output.log
 cse upgrade -c /root/cse-config.yaml -s > /root/cse-upgrade-output.log
 systemctl enable cse

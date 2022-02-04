@@ -127,6 +127,7 @@
             "target": "/root/",
             "files": [
               "cse-run.sh",
+              "set-vcenters.py",
               "container_service_extension-3.1.2.dev46-py3-none-any.whl",
               "pip-21.3.1-py3-none-any.whl"
             ]

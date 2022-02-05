@@ -15,30 +15,6 @@
           "properties": [
             {
               "attributes": {
-                "ovf:key": "configUrl",
-                "ovf:value": "https://raw.githubusercontent.com/andrew-ni/cse-ovf/master/config.yaml",
-                "ovf:type": "string",
-                "ovf:required": "true",
-                "ovf:userConfigurable": "true"
-              },
-              "Label": {
-                "value": "URL to CSE Server config file"
-              }
-            },
-            {
-              "attributes": {
-                "ovf:key": "mqttVerifySsl",
-                "ovf:type": "boolean",
-                "ovf:value": "False",
-                "ovf:required": "true",
-                "ovf:userConfigurable": "true"
-              },
-              "Label": {
-                "value": "Enable SSL verification for MQTT"
-              }
-            },
-            {
-              "attributes": {
                 "ovf:key": "vcdHost",
                 "ovf:type": "string",
                 "ovf:required": "true",
@@ -83,6 +59,18 @@
               },
               "Label": {
                 "value": "Enable SSL verification for VCD"
+              }
+            },
+            {
+              "attributes": {
+                "ovf:key": "mqttVerifySsl",
+                "ovf:type": "boolean",
+                "ovf:value": "False",
+                "ovf:required": "true",
+                "ovf:userConfigurable": "true"
+              },
+              "Label": {
+                "value": "Enable SSL verification for MQTT"
               }
             },
             {

@@ -2,7 +2,6 @@
 
 config_filepath=/root/cse-config.yaml
 log_filepath=/root/cse-init-per-instance.log
-properties_filepath=/root/properties
 ovfenv_filepath=/root/ovfenv
 
 echo `date` >> $log_filepath
@@ -44,10 +43,8 @@ cse sample -o $config_filepath \
     -x broker.storage_profile "$brokerStorageProfile" \
     -x broker.remote_template_cookbook_url "$brokerRemoteTemplateCookbookUrl"
 
-# perl -ne 'print $1,"\n" if (m/cse\.configUrl.*oe:value="(.*?)"/)' $ovfenv_filepath > /root/configUrl
-# wget $(cat /root/configUrl) -O $config_filepath
-
-sed 's/\  enforce_authorization: false/\  enforce_authorization: true/g' $config_filepath > $config_filepath
+# https://singhkays.com/blog/sed-error-i-expects-followed-by-text/
+sed -i'' -e 's/enforce_authorization: false/enforce_authorization: true/g' $config_filepath
 chmod 600 $config_filepath
 
 perl -ne 'print $1,"\n" if (m/cse\.vcentersNames.*oe:value="(.*?)"/)' $ovfenv_filepath >> /root/vcNames

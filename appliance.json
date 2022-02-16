@@ -24,11 +24,12 @@
     "appliance_name": "cse-appliance",
     "repositories": {
       "local": [
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf",
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/wheels",
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon/rpms/x86_64",
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/noarch",
-        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/rpms/photon-updates/rpms/x86_64"
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/repos",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/repos/wheels",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/repos/rpms/photon/rpms/x86_64",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/repos/rpms/photon-updates/rpms/noarch",
+        "/dbc/sc-dbc2131/niandrew/cap/cse-ovf/repos/rpms/photon-updates/rpms/x86_64"
       ],
       "rpm": [
         {
@@ -117,9 +118,7 @@
         {
           "local": {
             "target": "/etc/systemd/system/",
-            "files": [
-              "cse.service"
-            ]
+            "files": ["cse.service"]
           }
         },
         {
@@ -136,9 +135,7 @@
         {
           "local": {
             "target": "/var/lib/cloud/scripts/per-instance/",
-            "files": [
-              "cse-init-per-instance.sh"
-            ]
+            "files": ["cse-init-per-instance.sh"]
           }
         },
         {
@@ -186,9 +183,7 @@
     "copy-from-appliance": [
       {
         "target": "logs/",
-        "files": [
-          "/tmp/rpm_manifest.txt"
-        ]
+        "files": ["/tmp/rpm_manifest.txt"]
       }
     ],
     "exclude": {
@@ -211,8 +206,6 @@
   },
   "services": {
     "install": [],
-    "exclude": [
-      "fileintegrity"
-    ]
+    "exclude": ["fileintegrity"]
   }
 }
